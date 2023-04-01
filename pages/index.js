@@ -192,8 +192,8 @@ const Home = () => {
 
           <div>
             <label htmlFor="user-input">My Health Goals:</label>
-            <textarea
-              className="prompt-box"
+            <input
+              className="prompt-box2"
               id="user-input"
               placeholder="e.g. I want to lose 2kg"
               value={userInput}
