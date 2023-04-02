@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from 'openai';
+import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -10,10 +10,10 @@ const basePromptPrefix = "";
 const generateAction = async (req, res) => {
   // Run first prompt
   //console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`)
+  console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
 
   const baseCompletion = await openai.createCompletion({
-    model: 'text-davinci-003',
+    model: "text-davinci-003",
     prompt: `${basePromptPrefix}${req.body.userInput}\n`,
 
     prompt: `name : ${req.body.name}
@@ -27,8 +27,6 @@ const generateAction = async (req, res) => {
     Create a daily meal plan.( preapre a detailed schedule from Mon to Sun and time speciifc)(${req.body.country} - ${req.body.preference})
     Create a Workout Plan.(general)
     Create Health goals. (be funny motivating + add a funny quick advice quote tip)\n`,
-
-
 
     temperature: 0.7,
     max_tokens: 1000,
